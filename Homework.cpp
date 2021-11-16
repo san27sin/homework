@@ -43,13 +43,20 @@ int main()
 	/*
 	4. * Создать структуру (struct) данных «Поле для игры в крестики-нолики» иснабдить его всеми необходимыми свойствами (подумайте что можетпонадобиться).
 	*/
-
-	struct CombinationToWin
-	{
-		bool diagonal;
-		bool vertical;
-		bool horizontal;
+	
+	struct A {
+	char cross = 'x';
+	char zero = 'o';
+	char empty = ' ';
 	};
+	
+	A f;
+	
+	char Field[3][3] =
+	{ {f.empty,f.empty,f.empty},
+	 {f.empty,f.empty,f.empty},
+	 {f.empty,f.empty,f.empty} };
+
 
 	cout << "Введите имя первого игрока: " << endl;
 	char theNameOfFirstPlayer[10];
