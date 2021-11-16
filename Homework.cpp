@@ -6,34 +6,38 @@ Created by Sinitsyn A.
 #include <clocale>
 using namespace std;
 
-int main()
-{
-	/*	1. Создать и инициализировать переменные пройденных типов данных (shortint, int, long long, char, bool, float, double).	*/
-	short int one = 16'974;
+/*
+	1. Создать и инициализировать переменные пройденных типов данных (shortint, int, long long, char, bool, float, double).
+	*/
+
+short int one = 16'974;
 	int second = 56;
 	long long three = 32e9;
 	char four = 'K';
 	bool five = true;
 	float six = -4.5e-6;
 	double seven = 6.34234;
+
+
+
+
+int main()
+{
+	setlocale(LC_ALL, "rus");
+
 	
 	/*
 	2. Создать перечисление (enum) с возможными вариантами символов для игры в крестики-нолики.
 	*/
-
-	setlocale(LC_ALL, "rus");
-	enum TicTacToe
-	{
-		empty,
-		zero,
-		cross
-	};
-
+	enum fieldValue {x,o,s};
+	
+	
+	
 	/*
 	3. Создать массив, способный содеражать значения такого перечесления и инициализировать его.
 	*/
 
-	char TicTacToe[3][3] = { {'o','x','x'},{'o','x','x'},{'x','x','x'} };
+	fieldValue Field[3][3]={{s,o,o},{s,s,x},{x,x,x}};
 
 
 	/*
@@ -58,7 +62,8 @@ int main()
 	cout << "Имя первого игрока:\n" << theNameOfFirstPlayer << "\nИмя второго игрока:\n" << theNameOfSecondPlayer << endl;
 
 	/*
-	5. ** Создать структуру (struct MyVariant) объединяющую: union MyData (int,float, char) и 3-и битовых поля (флага) указывающими какого типа значение вданный момент содержится в объединении (isInt, isFloat, isChar).Продемонстрировать пример использования в коде этой структуры.
+	5. ** Создать структуру (struct MyVariant) объединяющую: union MyData (int,float, char) и 3-и битовых поля (флага) указывающими какого типа значение вданный момент содержится в объединении (isInt, isFloat, isChar).Продемонстрировать пример использования в коде этой структуры.
+
 	*/
 
 	union MyData {
